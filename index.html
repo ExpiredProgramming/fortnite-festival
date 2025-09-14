@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Paradise Fest — demo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- three.js -->
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/three@0.160.0/examples/js/controls/OrbitControls.js"></script>
+  <!-- howler.js for audio -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.core.min.js"></script>
+</head>
+<body>
+  <div id="ui">
+    <header>
+      <h1>paradise fest</h1>
+      <p class="tag">dark festival demo • bring your own tracks</p>
+    </header>
+
+    <div class="menu">
+      <div class="song-list">
+        <h2>choose a tune</h2>
+        <ul id="songs">
+          <!-- populated by JS -->
+        </ul>
+      </div>
+
+      <div class="controls">
+        <h2>controls</h2>
+        <p>w / a / s / d to move — click stage to focus</p>
+
+        <div class="audio-actions">
+          <label class="file-btn">
+            upload mp3
+            <input id="upload" type="file" accept="audio/*" />
+          </label>
+          <button id="playPause" class="btn">play</button>
+          <div id="now" class="now">no song loaded</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <small>drop your licensed mp3s into /assets/audio or use the upload button. no copyrighted files included.</small>
+    </footer>
+  </div>
+
+  <canvas id="glcanvas"></canvas>
+
+  <script src="main.js"></script>
+</body>
+</html>
