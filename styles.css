@@ -1,0 +1,41 @@
+:root{
+  --bg:#0b0d10;
+  --panel:#0f1114;
+  --muted:#98a0ab;
+  --accent:#7dd3fc;
+  --glass: rgba(255,255,255,0.03);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,Arial;background:linear-gradient(180deg,var(--bg),#060708);color:#e6eef6}
+#glcanvas{position:fixed;inset:0;display:block;z-index:0}
+#ui{
+  position:relative;z-index:3;max-width:1100px;margin:28px auto;padding:18px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;backdrop-filter: blur(6px);
+  border:1px solid rgba(255,255,255,0.03);
+  display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+}
+
+header h1{margin:0;font-size:22px;letter-spacing:1px;text-transform:lowercase}
+header .tag{color:var(--muted);margin-top:6px;font-size:13px}
+
+.menu{display:flex;gap:18px}
+.song-list{background:var(--panel);padding:12px;border-radius:10px;flex:1;border:1px solid rgba(255,255,255,0.02)}
+.song-list h2{margin:0 0 8px 0;font-size:15px}
+.song-list ul{list-style:none;padding:0;margin:0;max-height:340px;overflow:auto}
+.song-list li{padding:8px;border-radius:8px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;background:rgba(255,255,255,0.01)}
+.song-list li:hover{background:rgba(255,255,255,0.02)}
+.song-list .meta{font-size:13px;color:var(--muted)}
+
+.controls{background:var(--panel);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+.controls h2{margin:0 0 8px 0;font-size:15px}
+.file-btn{display:inline-block;padding:8px 10px;border-radius:8px;background:var(--glass);cursor:pointer;border:1px solid rgba(255,255,255,0.03);font-size:13px}
+.file-btn input{display:none}
+.btn{margin-left:10px;padding:8px 12px;border-radius:8px;background:transparent;border:1px solid var(--accent);color:var(--accent);cursor:pointer}
+.now{margin-top:10px;color:var(--muted);font-size:13px}
+
+footer{grid-column:1/3;color:var(--muted);font-size:12px;margin-top:8px}
+
+@media (max-width:980px){
+  #ui{grid-template-columns:1fr; padding:14px}
+  .menu{flex-direction:column}
+}
